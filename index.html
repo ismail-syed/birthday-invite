@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<!--
+	Identity by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Identity by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="light">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="light-password-section" class="">
+						<div>
+							<h4>PASSWORD</h4>
+								<input id="home-input-password-light" type="password" name="" value="" onkeydown="if (event.keyCode == 13) { goToDarkRSVP() }">
+						</div>
+					</section>
+
+					 <section id="dark-header-section" class="dark-container hide">
+						 	<div  style="">
+								<h1 class="white" style="font-size:52px">114 08 12 56</h1>
+								<h2 class="white secondary-font bold" style="font-size:38px">SEASON</h2>
+								<h5 class="white secondary-font">LEA // VINEETH</h5>
+								<h5 class="white secondary-font">11 18 16 @ 8PM</h5>
+								<h5 class="white secon">45.4273° N // 75.6940° W</h5>
+							</div>
+					 </section>
+
+					 <!-- 2MAIN RSVP -->
+						<footer id="dark-footer-rsvp" class="center hide" style="margin: 20px 0px">
+							 <h3 class="white">RSVP</h3>
+							 <div class="center">
+								 <h2 class="rsvp-ans white" style="display: inline; margin: 0px 5px" onclick="goToEmailView()">Y</h2>
+								 <h2 class="rsvp-ans white" style="display: inline; margin: 0px 5px" onclick="goToEmailView()">N</h2>
+							 </div>
+					 </footer>
+
+
+						<!-- <div class="video-background"> -->
+					    <!-- <div class="video-foreground"> -->
+					      <!-- <iframe src="https://youtube.com/embed/tMwvcjPNrQM?autoplay=1&controls=0&showinfo=0&autohide=1" frameborder="0" allowfullscreen></iframe> -->
+					    <!-- </div> -->
+					  <!-- </div> -->
+
+
+						<!-- 3EMAIL -->
+						<footer id="dark-footer-email" class="hide" style="margin: 20px 0px">
+							<h4 class="white">PLEASE CONFIRM WITH YOUR EMAIL.</h4>
+							<div>
+								<h5 class="white" style="display: inline; margin: 0px 5px">EMAIL</h5>
+								<input id="home-input-password-dark" type="text" name="" value="" onkeydown="if (event.keyCode == 13) { goToSeeYou() }">
+							</div>
+						</footer>
+
+						<!-- 4SEEYOU -->
+						<footer id="dark-footer-seeyou" class="hide" style="margin: 20px 0px">
+							<h4 class="white">SEE YOU ON 11 18 16.</h4>
+						</footer>
+
+
+					<!-- 3EMAIL -->
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="copyright">
+						</ul>
+					</footer>
+
+			</div>
+
+
+
+
+		<!-- Scripts -->
+			<!--[if lte IE 8]><script src="assets/js/respond.min.js"></script><![endif]-->
+			<script>
+				function goToDarkRSVP(){
+			    document.body.className = 'dark';
+			    document.getElementById("light-password-section").classList.add('hide');
+					document.getElementById("dark-header-section").classList.remove('hide');
+					document.getElementById("dark-footer-rsvp").classList.remove('hide');
+			  }
+
+				function goToEmailView(){
+					document.getElementById("dark-footer-rsvp").classList.add('hide');
+					document.getElementById("dark-footer-email").classList.remove('hide');
+				}
+
+				function goToSeeYou(){
+					document.getElementById("dark-footer-email").classList.add('hide');
+					document.getElementById("dark-footer-seeyou").classList.remove('hide');
+				}
+
+			</script>
+	</body>
+</html>
