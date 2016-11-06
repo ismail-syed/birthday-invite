@@ -6,14 +6,17 @@
 -->
 <html>
 	<head>
-		<title>Identity by HTML5 UP</title>
+		<title>LEA // VINEETH</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+		<script src="./assets/js/countdown.js" charset="utf-8"></script>
+
 	</head>
 	<body class="light">
 
@@ -28,9 +31,29 @@
 						</div>
 					</section>
 
+					<ul id="countdown" class="hide">
+						<li id="days">
+							<div class="number">00</div>
+							<!-- <div class="label">D</div> -->
+						</li>
+						<li id="hours">
+							<div class="number">00</div>
+							<!-- <div class="label">H</div> -->
+						</li>
+						<li id="minutes">
+							<div class="number">00</div>
+							<!-- <div class="label">M</div> -->
+						</li>
+						<li id="seconds">
+							<div class="number">00</div>
+							<!-- <div class="label">S</div> -->
+						</li>
+					</ul>
+
+
 					 <section id="dark-header-section" class="dark-container hide">
 						 	<div  style="">
-								<h1 class="white" style="font-size:52px">114 08 12 56</h1>
+								<!-- <h1 class="white" style="font-size:52px">114 08 12 56</h1> -->
 								<h2 class="white secondary-font bold" style="font-size:38px">SEASON</h2>
 								<h5 class="white secondary-font">LEA // VINEETH</h5>
 								<h5 class="white secondary-font">11 18 16 @ 8PM</h5>
@@ -48,19 +71,21 @@
 					 </footer>
 
 
-						<!-- <div class="video-background"> -->
-					    <!-- <div class="video-foreground"> -->
-					      <!-- <iframe src="https://youtube.com/embed/tMwvcjPNrQM?autoplay=1&controls=0&showinfo=0&autohide=1" frameborder="0" allowfullscreen></iframe> -->
-					    <!-- </div> -->
-					  <!-- </div> -->
+						<div id="kanye-video" class="video-background hide">
+					    <div class="video-foreground">
+					      <iframe src="https://youtube.com/embed/tMwvcjPNrQM?autoplay=1&loop=1&playlist=tMwvcjPNrQM" frameborder="0" allowfullscreen></iframe>
+					    </div>
+					  </div>
 
 
 						<!-- 3EMAIL -->
 						<footer id="dark-footer-email" class="hide" style="margin: 20px 0px">
-							<h4 class="white">PLEASE CONFIRM WITH YOUR EMAIL.</h4>
+							<h4 class="white" style="text-align:center">PLEASE CONFIRM WITH YOUR EMAIL.</h4>
 							<div>
-								<h5 class="white" style="display: inline; margin: 0px 5px">EMAIL</h5>
-								<input id="home-input-password-dark" type="text" name="" value="" onkeydown="if (event.keyCode == 13) { goToSeeYou() }">
+								<h5 class="white center" style="margin: 0px 5px">NAME</h5>
+								<input id="input-name-dark" type="text" name="" value="" onkeydown="if (event.keyCode == 13) { goToSeeYou() }">
+								<h5 class="white center" style="margin: 0px 5px; margin-top:10px;">EMAIL</h5>
+								<input id="input-email-dark" type="email" name="" value="" onkeydown="if (event.keyCode == 13) { goToSeeYou() }">
 							</div>
 						</footer>
 
@@ -70,8 +95,6 @@
 						</footer>
 
 
-					<!-- 3EMAIL -->
-				<!-- Footer -->
 					<footer id="footer">
 						<ul class="copyright">
 						</ul>
@@ -90,6 +113,9 @@
 			    document.getElementById("light-password-section").classList.add('hide');
 					document.getElementById("dark-header-section").classList.remove('hide');
 					document.getElementById("dark-footer-rsvp").classList.remove('hide');
+					document.getElementById("kanye-video").classList.remove('hide');
+					document.getElementById("countdown").classList.remove('hide');
+
 			  }
 
 				function goToEmailView(){
@@ -98,8 +124,21 @@
 				}
 
 				function goToSeeYou(){
-					document.getElementById("dark-footer-email").classList.add('hide');
-					document.getElementById("dark-footer-seeyou").classList.remove('hide');
+					var name = document.getElementById("input-name-dark");
+					var email = document.getElementById("input-email-dark");
+					// debugger;
+					if(name.value.length==0 || email.value.length==0 || !validateEmail(email.value)){
+						return;
+					} else {
+						document.getElementById("dark-footer-email").classList.add('hide');
+						document.getElementById("dark-footer-seeyou").classList.remove('hide');
+					}
+
+				}
+
+				function validateEmail(email) {
+				    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+				    return re.test(email);
 				}
 
 			</script>

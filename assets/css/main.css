@@ -480,35 +480,34 @@
 	/* COUNTDOWN */
 
 	ul#countdown {
-		position: relative;
-		top: 50%;
-		transform: translateY(-50%);
-		width: 50%;
-		margin: 0 auto;
-		padding: 15px 0 20px 0;
-		color: #fff;
-		border: 1px solid #adafb2;
-		border-width: 1px 0;
-		overflow: hidden;
-		font-family: 'Arial Narrow', Arial, sans-serif;
-		font-weight: bold;
-
-		li {
-			margin: 0 -3px 0 0;
-			padding: 0;
-			display: inline-block;
-			width: 25%;
-			font-size: 72px;
-			font-size: 6vw;
-			text-align: center;
-
-			.label {
-				color: #adafb2;
-				font-size: 18px;
-				font-size: 1.5vw;
-				text-transform: uppercase;
-			}
-		}
+	  position: relative;
+	  top: 50%;
+	  /*transform: translateY(-50%);*/
+	  width: 50%;
+	  margin: 0 auto;
+	  padding: 15px 0 20px 0;
+	  color: #fff;
+	  /*border: 1px solid #adafb2;*/
+	  /*border-width: 1px 0;*/
+	  overflow: hidden;
+	  font-family: 'VCR OSD Mono';
+	  font-weight: bold;
+		text-align: center;
+	}
+	ul#countdown li {
+	  margin: 0 -3px 0 0;
+	  padding: 0;
+	  display: inline-block;
+	  width: 15%;
+	  font-size: 72px;
+	  font-size: 4vw;
+	  text-align: center;
+	}
+	ul#countdown li .label {
+	  color: #adafb2;
+	  font-size: 18px;
+	  font-size: 1.0vw;
+	  text-transform: uppercase;
 	}
 
 	ol {
@@ -895,7 +894,7 @@
 	}
 
 		#wrapper > * {
-			z-index: 1;
+			/*z-index: 1;*/
 		}
 
 		#wrapper:before {
@@ -919,15 +918,19 @@
 		#home-input-password-light{
 			border: 2px #333 solid;
 			border-radius: 0px;
+			background-color: transparent;
 		}
-		#home-input-password-dark{
+		#input-name-dark,
+		#input-email-dark{
 			border: 2px #fff solid;
 			border-radius: 0px;
 			background-color: #000;
-			width: 260px;
-			display: inline;
+			width: 220px;
+			/*display: inline;*/
 			height: 30px;
 			color: #fff;
+			/*float: right;*/
+			margin: 0 auto;
 		}
 
 		.center{
